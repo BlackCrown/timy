@@ -1,34 +1,42 @@
 import React from 'react';
-import toggleMenu from './script'
+import Link from 'next/link';
+
 
 export function Header(){
   return(
-    <div className="flex">
-      <div className="flex gap-4 p-6 grow  content-center">
-        <div>Logo</div>
-        <h3>Dashboard</h3>
-      </div>
+    <main className='mx-4'>
+      <div className="flex">
+        <div className="my-auto">
+          <div className='w-[64px] m-2 h-[64px] bg-[blue] rounded-full'/>
+        </div>
 
-      <div className="grid grid-cols-2 gap-2 content-center">
-        <span className="text-right">N</span>
-        <img className="justify-end" src="#" alt="profile photo" />
-      </div>
-      <div>
-      <div className="lg:hidden flex p-2 justify-end">
-      <button id="menu-button" className="text-3xl  focus:outline-none">
-      &#9776;
-      </button>
-      </div>
-      <nav id="menu">
-        <ul className="hidden lg:flex justify-self-end gap-4 p-6">
-          <li>Dashboard</li>
-          <li>Analytics</li>
-          <li>Todo</li>
-          <li>Settings</li>
-        </ul>
-      </nav>
-      </div>
+        <div className='my-auto grow'>
+          <nav id="menu">
+            <ul className="flex gap-8 justify-center">
+              <Link href='/'>
+              <li className='p-2 bg-[red] rounded-xl'>Dashboard</li>
+              </Link>
+              <Link href='/'>
+              <li className='p-2 bg-[red] rounded-xl'>Analytics</li>
+              </Link>
+              <Link href='/'>
+              <li className='p-2 bg-[red] rounded-xl'>Todo</li>
+              </Link>
+              <Link href='/'>
+              <li className='p-2 bg-[red] rounded-xl'>Settings</li>
+              </Link>
+            </ul>
+          </nav>
+        </div>
 
-    </div>
+
+        <div className='my-auto'>
+          <div className='w-[32px] h-[32px] mx-2 my-auto bg-[red] rounded-full relative'>
+            <span className="text-right text-xs font-bold absolute left-0 top-0">N</span>
+            </div>
+        </div>
+
+      </div>
+    </main>
   )
 }
