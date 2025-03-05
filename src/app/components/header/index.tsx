@@ -7,23 +7,23 @@ export function Header(){
     <main className='mx-4'>
       <div className="flex">
         <div className="my-auto">
-          <div className='w-[64px] m-2 h-[64px] bg-[blue] rounded-full'/>
+          <div className='w-[64px] m-2 h-[64px] bg-secondary rounded-full'/>
         </div>
 
         <div className='my-auto grow'>
           <nav id="menu">
             <ul className="flex gap-8 justify-center">
               <Link href='/'>
-              <li className='p-2 bg-[red] rounded-xl'>Dashboard</li>
+              <li className='p-2 bg-principal-light rounded-xl'>Dashboard</li>
               </Link>
               <Link href='/'>
-              <li className='p-2 bg-[red] rounded-xl'>Analytics</li>
+              <li className='p-2 bg-principal-light rounded-xl'>Analytics</li>
               </Link>
               <Link href='/'>
-              <li className='p-2 bg-[red] rounded-xl'>Todo</li>
+              <li className='p-2 bg-principal-light rounded-xl'>Todo</li>
               </Link>
               <Link href='/'>
-              <li className='p-2 bg-[red] rounded-xl'>Settings</li>
+              <li className='p-2 bg-principal-light rounded-xl'>Settings</li>
               </Link>
             </ul>
           </nav>
@@ -31,7 +31,7 @@ export function Header(){
 
 
         <div className='my-auto'>
-          <div className='w-[32px] h-[32px] mx-2 my-auto bg-[red] rounded-full relative'>
+          <div className='w-[32px] h-[32px] mx-2 my-auto bg-secondary rounded-full relative'>
             <span className="text-right text-xs font-bold absolute left-0 top-0">N</span>
             </div>
         </div>
