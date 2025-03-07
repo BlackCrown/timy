@@ -14,7 +14,7 @@ export default function todo() {
 
       <div>
         <ul>
-          <li>Arrumar o quarto</li>
+          <li className=''>Arrumar o quarto</li>
           <li>Compras</li>
           <li>Limpar caixa de areia do gato</li>
         </ul>

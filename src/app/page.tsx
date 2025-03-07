@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Home(){
   return (
     <main className="bg-principal-light h-[calc(100vh-(80px))] rounded-3xl px-8 py-6">
@@ -25,9 +27,10 @@ export default function Home(){
       </section>
   
       <section className="grid grid-cols-2 gap-10 py-4 place-content-around">
-        <div className="bg-white p-9 rounded-[34px]">
+        <Link href='todo' className="bg-white p-9 rounded-[34px]">
           <h2>Todo List</h2>
-        </div>
+          
+        </Link>
 
         <div className="bg-white p-9 rounded-[34px]">
           <h2>Atividades importantes</h2>

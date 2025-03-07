@@ -16,13 +16,13 @@ export function Header(){
               <Link href='/'>
               <li className='p-2 bg-principal-light rounded-xl'>Dashboard</li>
               </Link>
-              <Link href='/'>
+              <Link href='analytics'>
               <li className='p-2 bg-principal-light rounded-xl'>Analytics</li>
               </Link>
-              <Link href='/'>
+              <Link href='todo'>
               <li className='p-2 bg-principal-light rounded-xl'>Todo</li>
               </Link>
-              <Link href='/'>
+              <Link href='settings'>
               <li className='p-2 bg-principal-light rounded-xl'>Settings</li>
               </Link>
             </ul>
