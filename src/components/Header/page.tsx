@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Menu, Bell, X } from "@deemlol/next-icons";
+import { Menu, Bell, X, CheckSquare, Clock, Settings, Activity, AppWindowMac  } from "@deemlol/next-icons";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -42,13 +42,28 @@ export default function Header() {
         </div>
       </div>
       </div>
-      <div className='-mt-4 absolute bg-[#f2f0f0] w-fit h-[100vh]'>
+      <div className={`${openMenu ? 'flex' : 'hidden'} -mt-4 absolute bg-[#f2f0f0] w-fit h-[calc(100vh-72px)]`}>
           <ul className='flex flex-col gap-4 px-4 mt-12 w-46'>
-            <li><a href="#">Dashborad</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Timesheets</a></li>
-            <li><a href="#">Todo</a></li>
-            <li><a href="#">Settings</a></li>
+            <li className='flex gap-1'>
+            <AppWindowMac size={20} color='#000000'/>
+              <a href="#" className='hover:text-red-600'>Dashborad</a>
+              </li>
+            <li className='flex gap-1'>
+            <Activity size={20} color='#000000'/>
+              <a href="#">Analytics</a>
+              </li>
+            <li className='flex gap-1'>
+              <Clock size={20} color='#000000'/>
+              <a href="#">Timesheets</a>
+              </li>
+            <li className='flex gap-1'>
+              <CheckSquare size={20} color='#000000'/>
+              <a href="#">Todo</a>
+              </li>
+            <li className='flex gap-1'>
+            <Settings size={20} color='#000000'/>
+              <a href="#">Settings</a>
+              </li>
           </ul>
         </div> 
     </header>
