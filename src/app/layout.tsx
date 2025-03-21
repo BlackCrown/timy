@@ -9,8 +9,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <Header />
       <body>
+      <Header />
         {children}
       </body>
     </html>
