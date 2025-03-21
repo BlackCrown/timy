@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { Menu, Bell, X, CheckSquare, Clock, Settings, Activity, AppWindowMac  } from "@deemlol/next-icons";
+import Link from 'next/link';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -43,31 +44,31 @@ export default function Header() {
       </div>
       </div>
       <div className={`${openMenu ? 'flex' : 'hidden'} -mt-4 absolute bg-[#f2f0f0] w-fit h-[calc(100vh-72px)]`}>
-          <ul className='flex flex-col gap-4 px-4 mt-12 w-46'>
+          <ul className='flex flex-col gap-2 px-4 mt-12 w-46'>
             <li>            
-              <a href="#" className='flex gap-1 hover:text-red-600'>
+              <Link href="/" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
               <AppWindowMac size={20}/>
-                Dashborad</a>
+                Dashborad</Link>
               </li>
             <li>
-              <a href="#" className='flex gap-1 hover:text-red-600'>
+              <Link href="Analytics" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
             <Activity size={20}/>
-                Analytics</a>
+                Analytics</Link>
               </li>
             <li>
-              <a href="#" className='flex gap-1 hover:text-red-600'>
+              <Link href="Analytics" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
               <Clock size={20}/>
-                Timesheets</a>
+              Analytics</Link>
               </li>
             <li>
-              <a href="#" className='flex gap-1 hover:text-red-600'>
+              <Link href="Todo" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
               <CheckSquare size={20}/>
-                Todo</a>
+                Todo</Link>
               </li>
             <li>
-              <a href="#" className='flex gap-1 hover:text-red-600'>
+              <Link href="Settings" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
             <Settings size={20}/>
-                Settings</a>
+                Settings</Link>
               </li>
           </ul>
         </div> 
