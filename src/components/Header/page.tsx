@@ -19,7 +19,8 @@ export default function Header() {
     }
 
   return (
-    <header className='flex place-content-between items-center rounded-b-3xl p-3 gap-4 bg-[#f2f0f0]'>
+    <header className='block relative w-full'>
+      <div className='flex place-content-between items-center rounded-b-3xl p-3 gap-4 bg-[#f2f0f0]'>
       <div className='flex gap-4'>
         <div>
           <button onClick={handleClick} className='cursor-pointer' aria-expanded={openMenu}>
@@ -40,8 +41,16 @@ export default function Header() {
           <div className='w-8 h-8 rounded-full bg-red-600'/>
         </div>
       </div>
-
-
+      </div>
+      <div className='-mt-4 absolute bg-[#f2f0f0] w-fit h-[100vh]'>
+          <ul className='flex flex-col gap-4 px-4 mt-12 w-46'>
+            <li><a href="#">Dashborad</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Timesheets</a></li>
+            <li><a href="#">Todo</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </div> 
     </header>
   )
 }
