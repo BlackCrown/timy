@@ -31,9 +31,9 @@ export default function Header() {
       <h1>Dashborad</h1>
       </div>
 
-      <div>
+      <Link href='/'>
         <div className='w-30 h-15 rounded-2xl bg-blue-600'/>
-      </div>
+      </Link>
 
       <div className='flex gap-4'>
         <Bell size={28} color='#000000' />
@@ -51,22 +51,22 @@ export default function Header() {
                 Dashborad</Link>
               </li>
             <li>
-              <Link href="Analytics" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
+              <Link href="/analytics" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
             <Activity size={20}/>
                 Analytics</Link>
               </li>
             <li>
-              <Link href="Analytics" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
+              <Link href="/timesheets" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
               <Clock size={20}/>
-              Analytics</Link>
+              Timesheets</Link>
               </li>
             <li>
-              <Link href="Todo" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
+              <Link href="/todo" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
               <CheckSquare size={20}/>
                 Todo</Link>
               </li>
             <li>
-              <Link href="Settings" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
+              <Link href="/settings" className='flex gap-1 hover:text-red-600 hover:bg-zinc-200 p-2 rounded-2xl'>
             <Settings size={20}/>
                 Settings</Link>
               </li>
