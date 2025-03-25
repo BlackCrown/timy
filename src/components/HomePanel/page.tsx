@@ -1,9 +1,12 @@
 import React from 'react'
-import { Play, MoreVertical,PieChart  } from "@deemlol/next-icons";
+ import  {Play, PieChart, Zap, Check } from "@deemlol/next-icons"
+import Card from './card'
 
 export default function HomePanel() {
+  console.log(typeof(Play));
+  
   return (
-    <div className='p-8 bg-gray-400 rounded-t-3xl h-[calc(100vh-84px)]'>
+    <div className='p-8 bg-gray-400 rounded-t-3xl h-[100%]'>
       <div className='header flex place-content-between'>
         <div>
           <h1 className='font-bold text-xl'>Today</h1>
@@ -16,16 +19,11 @@ export default function HomePanel() {
           </div>
         </div>
       </div>
-      <div className='bg-gray-100 rounded-2xl p-2 max-w-40'>
-        <div className='grid gap-x-4 items-start grid-cols-2'>
-          <h3>Weekly Activity</h3>
-          <MoreVertical size={28} className='p-1 justify-self-end align-self-top' color='#db4b4b'/>
-          <p className='self-center'>0%</p>
-          <div className='bg-yellow-100 p-2 border-2 border-red-200 rounded-xl'>
-          <PieChart size={48} color='#db4b4b'/>
-          </div>
-        </div>
-      </div>
+      <section className='grid grid-cols-1 justify-items-center justify-between mt-8 gap-4 md:justify-around sm:flex'>
+          <Card title='Weekly Activity' text='0%' icon={<PieChart className=' place-self-center' />}/>
+          <Card title='Worked This Week' text='40:12:00' icon={<Zap  className='place-self-center' />}/>
+          <Card title='Todo`s List' text='5' icon={<Check  className='place-self-center' />}/>
+      </section>
     </div>
   )
 }
