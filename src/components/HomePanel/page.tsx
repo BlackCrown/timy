@@ -3,7 +3,6 @@ import React from 'react'
 import Card from './card'
 
 export default function HomePanel() {
-  console.log(typeof(Play));
   
   return (
     <div className='p-8 bg-gray-400 rounded-t-3xl h-[100%]'>
