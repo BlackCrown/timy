@@ -29,9 +29,11 @@ export default function Todo() {
       </div>
       <div>
         <h1>Tasks</h1>
-        <ul>
+        <ul className=''>
           {todos.map((task, index) => (
-            <li key={index}>{task}</li>
+            <div className='my-2 bg-gray-400 p-1 px-6 rounded-md mx-1 content-center' key={index}>
+              <li className='flex mx-auto max-w-xl justify-between'>{task}<span>{index + 1}</span></li>
+            </div>
           ))}
         </ul>
       </div>
