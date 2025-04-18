@@ -9,19 +9,19 @@ const TodoTask: React.FC<iTaskFunc> =({completed, id, text, deletTask, editTask,
     <div
               className={
                 completed
-                  ? 'my-2 bg-red-400 p-1 rounded-md'
-                  : 'my-2 bg-gray-400 p-1 rounded-md'
+                  ? 'my-2 bg-red-400 p-2 rounded-md hover:bg-red-600'
+                  : 'my-2 bg-gray-400 p-2 rounded-md hover:bg-blue-100'
               }
               key={id}
             >
-              <li className="flex mx-auto max-w-xl justify-between break-all">
+              <li className="flex mx-auto max-w-[900px] justify-between break-all">
                 <div className=' my-0 py-0 '
                   onClick={() => toggleCompleteTask(id)}>{
-                  completed ? <CheckCircle width='21px' className='text-red-500'
-                /> : <Circle width='21px'/>}
+                  completed ? <CheckCircle width='21px' className='text-red-500 bg-transparent  cursor-pointer'
+                /> : <Circle width='21px' className=' cursor-pointer'/>}
                 </div>
                 {text}
-                <div className="flex ml-6 gap-5">
+                <div className="flex ml-2 gap-2">
                   <div
                     onClick={() => deletTask(id)}
                     className="text-white cursor-pointer"
