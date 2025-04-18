@@ -10,15 +10,15 @@ interface iTask {
   completed: boolean;
 }
 
-const todosTeste: iTask[] = [
-  { text: 'Task 1', id: 1, completed: false },
-  { text: 'Task 2', id: 2, completed: false },
-  { text: 'Task 3', id: 3, completed: false },
-];
+// const todosTeste: iTask[] = [
+//   { text: 'Task 1', id: 1, completed: false },
+//   { text: 'Task 2', id: 2, completed: false },
+//   { text: 'Task 3', id: 3, completed: false },
+// ];
 
 export default function Todo() {
   const [value, setValue] = React.useState<string>('');
-  const [todos, setTodos] = React.useState<iTask[]>(todosTeste);
+  const [todos, setTodos] = React.useState<iTask[]>([]);
 
 function deletTask(id: number) {
   setTodos(todos.filter((element) => element.id !== id));
