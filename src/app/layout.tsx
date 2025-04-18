@@ -9,8 +9,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <body className="flex-col">
       <Header />
-      <body>
         {children}
       </body>
     </html>
