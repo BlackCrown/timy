@@ -19,34 +19,57 @@ interface iTask {
 export default function Todo() {
   const [value, setValue] = React.useState<string>('');
   const [todos, setTodos] = React.useState<iTask[]>([]);
+  const [completedTasks, setCompletedTasks] = React.useState<iTask[]>([]);
 
-function deletTask(id: number) {
-  setTodos(todos.filter((element) => element.id !== id));
-}
-
-function editTask(id: number) {
-  const newTaskText = prompt(
-    'Enter the new task',
-    todos.filter((task) => task.id === id)[0].text,
-  );
-  if (newTaskText !== null && newTaskText !== '') {
-    setTodos(
-      todos.map((task) =>
-        task.id === id ? { ...task, text: newTaskText } : task,
-      ),
-    );
+function deletTask(id: number, type: iTask[]) {
+  if(type === todos) {
+    setTodos(todos.filter((element) => element.id !== id));
+  }else if(type === completedTasks) {
+    setCompletedTasks(completedTasks.filter((element) => element.id !== id));
+  }else{
+    return;
   }
 }
 
-function toggleCompleteTask(id: number) {
-  const taskComplete = todos.filter((task) => task.id === id);
-  if (taskComplete) {
-    setTodos(
-      todos.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task,
-      ),
+function editTask(id: number, type: iTask[]) {
+
+    const newTaskText = prompt(
+      'Enter the new task',
+      type.filter((task) => task.id === id)[0].text,
     );
+    if (newTaskText !== null && newTaskText !== '') {
+      if(type === todos) {
+      setTodos(
+        type.map((task) =>
+          task.id === id ? { ...task, text: newTaskText } : task,
+        ),
+      );
+    }else if(type === completedTasks) {
+      setCompletedTasks(
+        type.map((task) =>
+          task.id === id ? { ...task, text: newTaskText } : task,
+        ),
+      );
+    }
   }
+}
+
+function toggleCompleteTask(id: number, type: iTask[]) {
+  if(id) {const task = type.find((task) => task.id === id);
+    if (task && task.completed === false) {
+      task.completed = true; 
+      setCompletedTasks((prev: iTask[]) => [...prev, task]);
+      deletTask(id, todos);
+      console.log(task)
+    } else if (task && task.completed === true) {
+      task.completed = false
+      setTodos((prev: iTask[]) => [...prev, task]);
+      deletTask(id, completedTasks);
+  }else{
+    return;
+  }
+}
+
 }
 
 
@@ -96,7 +119,16 @@ function toggleCompleteTask(id: number) {
         <h1 className="flex text-2xl place-self-center font-bold p-2">Your Tasks</h1>
         <ul className="w-full">
           {todos.map((task) => (
-            <TodoTask key={task.id} completed={task.completed} id={task.id} text={task.text} deletTask={() => deletTask(task.id)} editTask={() => editTask(task.id)} toggleCompleteTask={() => toggleCompleteTask(task.id)}/>
+            <TodoTask key={task.id} completed={task.completed} id={task.id} text={task.text} deletTask={() => deletTask(task.id, todos)} editTask={() => editTask(task.id, todos)} toggleCompleteTask={() => toggleCompleteTask(task.id, todos)}/>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-gray-200 mx-auto rounded-md py-4 px-4 mt-4 max-w-[550px] md:max-w-[700px] lg:max-w-[1000px]">
+        <h1 className="flex text-2xl place-self-center font-bold p-2">Your Tasks Completed</h1>
+        <ul className="w-full">
+          {completedTasks.map((task) => (
+            <TodoTask key={task.id} completed={task.completed} id={task.id} text={task.text} deletTask={() => deletTask(task.id, completedTasks)} editTask={() => editTask(task.id, completedTasks)} toggleCompleteTask={() => toggleCompleteTask(task.id, completedTasks)}/>
           ))}
         </ul>
       </div>
